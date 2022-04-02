@@ -1,14 +1,14 @@
-# public_momapf
+# Public C++ MOMAPF
 
-C++ Implementation of Multi-Objective Multi-Agent Path Finding Algorithms.
+This repository provides C++ Implementation of several Multi-Objective Multi-Agent Path Finding algorithms, including MOM* [1] and MO-CBS [2]. The code is distributed for academic and non-commercial use, and this project is still under active development. 
 
-The code is distributed for academic and non-commercial use.
-
-This project is still under active development.
+Note: An older preliminary Python implementation of the algorithms can be found [there](https://github.com/wonderren/public_pymomapf), which is not maintained any more. This C++ package is recommended for reference and further development.
 
 ## Requirements
 
-* We use CMake (3.16.3) and Make (4.2.1) to compile the code. Lower or higher version may also work.
+* We use CMake (3.16.3) and Make (4.2.1) on Ubuntu 20.04 to compile the code. Lower or higher version may also work. 
+* We use C++11. Lower or higher version of C++ may also work.
+* We massively use C++ STL, which is very common in C++ programming nowadays. We do not use any third-party libraries, and this package should be straightfoward to compile by following the instructions below.
 
 ## Project Structure
 
