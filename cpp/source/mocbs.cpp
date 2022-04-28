@@ -224,9 +224,10 @@ void MOCBS_TB::Search(std::vector<long>& starts, std::vector<long>& goals, doubl
   // main search loop
   size_t iterCount__ = 0;
   while ( true ) {
+    iterCount__++;
     if (DEBUG_MOCBS > 0) {
       std::cout << "[DEBUG]----------------------- search iter : " 
-        << iterCount__++ << " ------------------------" << std::endl;
+        << iterCount__ << " ------------------------" << std::endl;
     }
 
     //// select high-level node, lexicographic order
@@ -240,6 +241,9 @@ void MOCBS_TB::Search(std::vector<long>& starts, std::vector<long>& goals, doubl
 
     //// solution filtering
     if ( _SolutionFilter(node->g) ) {
+      if (DEBUG_MOCBS) {
+        std::cout << "[DEBUG] * MOCBS_TB::Search node " << node->id << " solution filtered" << std::endl;
+      }
       continue; // filtered, skip this node.
     };
 
@@ -337,7 +341,7 @@ bool MOCBS_TB::_Init() {
   _result.rt_initHeu = std::chrono::duration<double>(std::chrono::steady_clock::now() - init_t0).count();  
 
   std::cout << "), total = " << _result.n_initRoot << " rt_init = " << _result.rt_initHeu << std::endl;
-
+  // std::cout << " At the end of _Init(), n_generated = " << _result.n_generated << std::endl;
   return true;
 };
 
@@ -356,8 +360,21 @@ CBSNode* MOCBS_TB::_SelectNode() {
   if (DEBUG_MOCBS > 0) {
     std::cout << "[DEBUG] ++ MOCBS_TB::_SelectNode curr tree empty, gen next root." << std::endl;
   }
+  // clean up current cached high level nodes (to save memory) @2021-12-29 [Engineering Detail]
   _nodes.clear();
-  return _NextRoot();
+  
+  if (_NextRoot()) {
+    // OPEN cannot be empty now.
+    long nid = _open.begin()->second;
+    CBSNode* out = &( _nodes[nid] );
+    _open.erase(_open.begin());
+    if (DEBUG_MOCBS > 0) {
+      std::cout << "[DEBUG] ++ MOCBS_TB::_SelectNode node = " << (*out) << std::endl;
+    }
+    return out; // a node is selected.
+  }else{
+    return NULL;
+  }
 };
 
 CBSNode* MOCBS_TB::_NextRoot() {
@@ -444,6 +461,7 @@ void MOCBS_TB::_UpdateSolution(CBSNode* n) {
     // std::cout << " _UpdateSolution, n->g = " << n->g << " sol : " << cc.second << std::endl;
     if (search::EpsDominance(n->g, cc.second, _epsilon)) {
       // std::cout << " _UpdateSolution, deleted ! " << std::endl;
+      // std::cout << " input g = " << n->g << " prev sol cost = " << cc.second << std::endl; 
       id_to_delete.push_back(cc.first);
     }
   }
