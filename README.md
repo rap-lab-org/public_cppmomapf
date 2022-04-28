@@ -1,8 +1,24 @@
 # Public C++ MOMAPF
 
-This repository provides C++ Implementation of several Multi-Objective Multi-Agent Path Finding algorithms, including MOM* [1] and MO-CBS [2]. The code is distributed for academic and non-commercial use, and this project is still under active development. 
+This repository provides C++ Implementation of several Multi-Objective Multi-Agent Path Finding algorithms, including MOM* [1] and MO-CBS [2]. This project is still under active development. 
 
 Note: An older preliminary Python implementation of the algorithms can be found [there](https://github.com/wonderren/public_pymomapf), which is not maintained any more. This C++ package is recommended for reference and further development.
+
+
+<p align="center">
+<img src="https://github.com/wonderren/wonderren.github.io/blob/master/images/fig_mocbs_construction.png" alt="" hspace="15" style=" border: #FFFFFF 2px none;">
+</p>
+
+(Fig 1: A toy example about planning conflict-free joint paths for multiple agents to transport materials in a construction site while optimizing both path risk and arrival time. The black cells are semi-constructed architectures and there is a risk of collision or falling items in the neighborhood of each black cell. The darkness of each grey cell indicates the risk cost. (a) shows the Pareto-optimal front (the cost vectors corresponding to joint paths). (b), (c) and (d) show three Pareto-optimal solution joint paths corresponding to the red, green and orange solution in (a) respectively. In (b), (c) and (d), the colored dotted paths show the individual paths that constitute the corresponding joint path, while the black dotted paths show the individual paths in other Pareto-optimal solutions. For solution S_1, all agents take shortcut and go through risky zones while for solution S_2, all agents are being conservative and go through safe zones. The solution S_3 balances the two objectives. Finding and visualizing a Pareto-optimal set of solutions can potentially help the human decision maker to understand the underlying trade-off between conflicting objectives and thus make more informed decisions.)
+
+The code is distributed for academic and non-commercial use.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
 ## Requirements
 
