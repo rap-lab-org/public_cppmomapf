@@ -46,6 +46,8 @@ SOFTWARE.
 
 ## References
 
+Please cite the corresponding papers if you find anything in this repository helpful.
+
 * [1] Subdimensional Expansion for Multi-objective Multi-agent Path Finding\
 	**Zhongqiang Ren**, Sivakumar Rathinam, and Howie Choset.\
 	<i>IEEE Robotics and Automation Letters (RA-L)</i>, 2021.\
