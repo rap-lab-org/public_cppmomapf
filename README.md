@@ -52,20 +52,12 @@ Please cite the corresponding papers if you find anything in this repository hel
 	**Zhongqiang Ren**, Sivakumar Rathinam, and Howie Choset.\
 	<i>IEEE Robotics and Automation Letters (RA-L)</i>, 2021.\
 [[Bibtex](https://wonderren.github.io/files/bibtex_ren21momstar.txt)]
-[[Paper](https://ieeexplore.ieee.org/document/9484849)]
-[[Arxiv](https://arxiv.org/pdf/2102.01353.pdf)]
+[[Paper](https://wonderren.github.io/files/ren21-MOMstar_RAL_IROS.pdf)]
 [[Talk](https://youtu.be/pfeBNvOqzvE)]
 
-* [2] Multi-objective Conflict-based Search for Multi-agent Path Finding\
+* [2] A Conflict-Based Search Framework for Multi-Objective Multi-Agent Path Finding\
 	**Zhongqiang Ren**, Sivakumar Rathinam, and Howie Choset.\
-	<i>IEEE International Conference on Robotics and Automation (ICRA)</i>, 2021.\
-[[Bibtex](https://wonderren.github.io/files/bibtex_ren21mocbs.txt)]
-[[Paper](https://ieeexplore.ieee.org/document/9560985)]
-[[Arxiv](https://arxiv.org/pdf/2101.03805.pdf)]
+	<i>IEEE Transactions on Automation Science and Engineering (T-ASE)</i>, 2022.\
+[[Bibtex](https://wonderren.github.io/files/bibtex_ren21mocbs_tase.txt)]
+[[Paper](https://wonderren.github.io/files/ren22_mocbs_tase_final.pdf)]
 [[Talk](https://youtu.be/KI-BVhsjg0I)]
-
-* [3] Multi-objective Conflict-based Search Using Safe-interval Path Planning\
-  **Zhongqiang Ren**, Sivakumar Rathinam, Maxim Likhachev and Howie Choset.\
-  <i>arXiv</i>\
-[[Bibtex](https://wonderren.github.io/files/bibtex_ren22mosipp.txt)]
-[[Arxiv](https://arxiv.org/pdf/2108.00745.pdf)]
